@@ -313,6 +313,21 @@
     <!-- Animated background bubbles -->
     <div id="bubbles-container" class="fixed inset-0 overflow-hidden -z-10"></div>
 
+<!-- Sidebar Menu -->
+<aside id="sidebar-menu" class="menu-panel">
+  <span id="close-menu" class="menu-close">&times;</span>
+  <h2 class="neon-text">Меню</h2>
+  <ul>
+    <li><a href="#">Профиль</a></li>
+    <li><a href="#">Статистика</a></li>
+    <li><a href="#">Таблица лидеров</a></li>
+    <li><a href="#">Авторизация</a></li>
+  </ul>
+</aside>
+
+<!-- Overlay when menu is open -->
+<div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
     <!-- Header -->
     <header class="relative overflow-hidden py-12">
         <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-purple-900/30 opacity-50"></div>
@@ -743,7 +758,7 @@
                     Финансовая грамотность — ключ к успеху!
                 </div>
             </div>
-            <p class="mt-6 text-white/50">© 2025 Финансовый тренажёр.</p>
+            <p class="mt-6 text-white/50">© 2025 Финансовый тренажёр</p>
         </footer>
     </div>
 
