@@ -1571,5 +1571,35 @@
             return 'лет';
         }
     </script>
+<script>
+  function toggleMenu() {
+    const sidebar = document.getElementById('sidebar-menu');
+    const overlay = document.getElementById('menu-overlay');
+    sidebar.classList.toggle('open');
+    overlay.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
+  }
+
+  function closeMenu() {
+    document.getElementById('sidebar-menu').classList.remove('open');
+    document.getElementById('menu-overlay').style.display = 'none';
+  }
+
+  // Close menu on outside click or ESC key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
+  });
+
+  document.getElementById('close-menu').addEventListener('click', () => {
+    closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeMenu();
+    }
+  });
+</script>
 </body>
 </html>
