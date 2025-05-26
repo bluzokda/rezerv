@@ -418,6 +418,15 @@
                 <div id="auth-loader" class="neon-loader hidden"></div>
             </button>
         </form>
+        
+        <div class="mt-6 text-center text-sm text-white/60">
+            <p id="auth-switch-mode">Нет аккаунта? <a href="#" class="text-blue-400 hover:underline" onclick="switchAuthMode('register')">Зарегистрируйтесь</a></p>
+            <p id="auth-forgot-password" class="mt-1">Забыли пароль? <a href="#" class="text-blue-400 hover:underline" onclick="switchAuthMode('forgot')">Восстановить</a></p>
+        </div>
+    </div>
+</div>
+<!-- Toast notification -->
+<div id="toast" class="fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-10 opacity-0 transition-all duration-300"></div>
 <!-- Sidebar Menu -->
 <aside id="sidebar-menu" class="menu-panel">
   <span id="close-menu" class="menu-close">&times;</span>
