@@ -895,6 +895,39 @@
         let egeTasksCompleted = 0;
         let egeTotalScore = 0;
 
+
+        // Функции для авторизации
+        function openAuthModal() {
+            document.getElementById('auth-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAuthModal() {
+            document.getElementById('auth-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function switchToRegister() {
+            // Здесь можно добавить логику переключения на регистрацию
+            alert('Функция регистрации будет реализована позже');
+        }
+
+        // Обработчик формы входа
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-password').value;
+            
+            if (!email || !password) {
+                alert('Пожалуйста, заполните все поля');
+                return;
+            }
+            
+            // Здесь будет логика авторизации
+            alert('Функция входа будет реализована позже');
+            closeAuthModal();
+        });
+
         // Создание анимированного фона
         function createBubbles() {
             const container = document.getElementById('bubbles-container');
