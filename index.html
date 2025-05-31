@@ -236,211 +236,432 @@
         .level-tab.inactive:hover {
             background: rgba(30, 30, 60, 0.7);
         }
-        ..result-container {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    margin-top: 12px;
-    font-size: 0.925rem;
-    line-height: 1.4;
-    box-sizing: border-box;
-    background-color: rgba(10, 10, 26, 0.85);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 242, 255, 0.1);
-    overflow: hidden;
-}
+        
+        .result-container {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            margin-top: 12px;
+            font-size: 0.925rem;
+            line-height: 1.4;
+            box-sizing: border-box;
+            background-color: rgba(10, 10, 26, 0.85);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 242, 255, 0.1);
+            overflow: hidden;
+        }
 
-/* Для правильных ответов */
-.result-container.bg-green-900\/10 {
-    background: rgba(0, 159, 80, 0.15);
-    border-color: rgba(0, 255, 128, 0.2);
-}
+        /* Для правильных ответов */
+        .result-container.bg-green-900\/10 {
+            background: rgba(0, 159, 80, 0.15);
+            border-color: rgba(0, 255, 128, 0.2);
+        }
 
-/* Для неправильных ответов */
-.result-container.bg-red-900\/10 {
-    background: rgba(159, 0, 50, 0.15);
-    border-color: rgba(255, 0, 80, 0.2);
-}
+        /* Для неправильных ответов */
+        .result-container.bg-red-900\/10 {
+            background: rgba(159, 0, 50, 0.15);
+            border-color: rgba(255, 0, 80, 0.2);
+        }
 
-/* Для предупреждений */
-.result-container.bg-yellow-900\/20 {
-    background: rgba(159, 100, 0, 0.2);
-    border-color: rgba(255, 200, 0, 0.3);
-}
+        /* Для предупреждений */
+        .result-container.bg-yellow-900\/20 {
+            background: rgba(159, 100, 0, 0.2);
+            border-color: rgba(255, 200, 0, 0.3);
+        }
 
-.result-container details {
-    transition: all 0.2s ease;
-    margin-top: 8px;
-}
+        .result-container details {
+            transition: all 0.2s ease;
+            margin-top: 8px;
+        }
 
-.result-container summary {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    color: var(--neon-blue);
-    font-weight: 500;
-    outline: none;
-    padding: 4px 0;
-}
+        .result-container summary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            color: var(--neon-blue);
+            font-weight: 500;
+            outline: none;
+            padding: 4px 0;
+        }
 
-.result-container summary:hover {
-    color: white;
-}
+        .result-container summary:hover {
+            color: white;
+        }
 
-.result-container details[open] summary {
-    margin-bottom: 6px;
-}
+        .result-container details[open] summary {
+            margin-bottom: 6px;
+        }
 
-.result-container .font-mono {
-    font-family: 'Courier New', monospace;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    display: inline-block;
-}
+        .result-container .font-mono {
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
 
-    /* Для математических формул */
-    .result-container katex {
-        font-size: 1.1em;
-    }
-    
-    /* Для кнопки Меню */
-    .menu-panel {
-      position: fixed;
-      top: 0;
-      right: -256px;
-      width: 256px;
-      height: 100%;
-      background-color: var(--dark-bg);
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
-      z-index: 50;
-      padding: 1rem;
-      transition: right 0.3s ease-in-out;
-    }
+        /* Для математических формул */
+        .result-container katex {
+            font-size: 1.1em;
+        }
+        
+        /* Для кнопки Меню */
+        .menu-panel {
+            position: fixed;
+            top: 0;
+            right: -256px;
+            width: 256px;
+            height: 100%;
+            background-color: var(--dark-bg);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 50;
+            padding: 1rem;
+            transition: right 0.3s ease-in-out;
+        }
 
-    .menu-panel.open {
-      right: 0;
-    }
+        .menu-panel.open {
+            right: 0;
+        }
 
-    .menu-panel h2 {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
+        .menu-panel h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
 
-    .menu-panel ul {
-      list-style: none;
-      padding: 0;
-    }
+        .menu-panel ul {
+            list-style: none;
+            padding: 0;
+        }
 
-    .menu-panel li {
-      margin-bottom: 1rem;
-    }
+        .menu-panel li {
+            margin-bottom: 1rem;
+        }
 
-    .menu-panel a {
-      color: var(--neon-blue);
-      text-decoration: none;
-      display: block;
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      transition: background 0.3s;
-    }
+        .menu-panel a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: background 0.3s;
+        }
 
-    .menu-panel a:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+        .menu-panel a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
-    .menu-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
+        .menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: none;
-      z-index: 40;
-    }
-  </style>
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 40;
+        }
+        
+        /* Стили для модального окна авторизации */
+        .auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .auth-container {
+            background: rgba(10, 10, 26, 0.95);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .auth-overlay.active .auth-container {
+            transform: translateY(0);
+        }
+        
+        .auth-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 12px 0;
+            background: rgba(20, 20, 40, 0.5);
+            border: none;
+            color: var(--neon-blue);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-tab.active {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .auth-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .auth-form h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .auth-input-group {
+            margin-bottom: 20px;
+        }
+        
+        .auth-input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--neon-blue);
+        }
+        
+        .auth-input {
+            width: 100%;
+            padding: 14px;
+            background: rgba(20, 20, 40, 0.5);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-input:focus {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 0 3px rgba(0, 242, 255, 0.2);
+            outline: none;
+        }
+        
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .auth-footer a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .auth-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: rgba(20, 20, 40, 0.5);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-close:hover {
+            background: var(--neon-blue);
+            color: var(--dark-bg);
+        }
+        
+        .auth-error {
+            background: rgba(255, 50, 50, 0.2);
+            border: 1px solid rgba(255, 100, 100, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
 </head>
 <body class="antialiased">
     <!-- Animated background bubbles -->
     <div id="bubbles-container" class="fixed inset-0 overflow-hidden -z-10"></div>
-<!-- Auth Modal -->
-<div id="auth-modal" class="auth-container hidden">
-    <div class="auth-box">
-        <div class="text-center mb-6">
-            <h1 class="auth-title">ЭКСПЕРТ</h1>
-            <p class="text-white/80">Офицерская грамотность — ключ к успеху</p>
-        </div>
-        
-        <div class="text-center mb-6">
-            <h2 id="auth-modal-title" class="text-xl font-bold text-white mb-1">Авторизация</h2>
-            <p id="auth-modal-subtitle" class="text-white/60">Войдите в свой аккаунт</p>
-        </div>
-        
-        <div id="auth-error" class="hidden bg-red-900/20 text-red-400 p-3 rounded-lg mb-4"></div>
-        
-        <form id="auth-form" class="space-y-4">
-            <div id="auth-name-field" class="hidden">
-                <label class="block text-sm font-medium text-neon-blue mb-1">Имя</label>
-                <input type="text" id="auth-name" class="auth-input" placeholder="Ваше имя">
+    
+    <!-- Auth Modal -->
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-container neon-border">
+            <button class="auth-close" onclick="closeAuthModal()">×</button>
+            
+            <div class="text-center mb-6">
+                <h1 class="auth-title">ФИНАНСОВЫЙ ТРЕНАЖЁР</h1>
+                <p class="text-white/80">Повышайте свою финансовую грамотность</p>
             </div>
             
-            <div>
-                <label class="block text-sm font-medium text-neon-blue mb-1">Email</label>
-                <input type="email" id="auth-email" required class="auth-input" placeholder="Ваш email">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Вход</button>
+                <button class="auth-tab" data-tab="register">Регистрация</button>
+                <button class="auth-tab" data-tab="forgot">Восстановить</button>
             </div>
             
-            <div>
-                <label class="block text-sm font-medium text-neon-blue mb-1">Пароль</label>
-                <input type="password" id="auth-password" required class="auth-input" placeholder="Ваш пароль">
-            </div>
+            <div id="auth-error" class="auth-error"></div>
             
-            <div id="auth-confirm-password-field" class="hidden">
-                <label class="block text-sm font-medium text-neon-blue mb-1">Подтвердите пароль</label>
-                <input type="password" id="auth-confirm-password" class="auth-input" placeholder="Повторите пароль">
-            </div>
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active">
+                <div class="auth-input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="auth-input" placeholder="Ваш email" required>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label for="login-password">Пароль</label>
+                    <input type="password" id="login-password" class="auth-input" placeholder="Ваш пароль" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Войти</button>
+                
+                <div class="auth-footer">
+                    <a href="#" onclick="switchAuthMode('forgot')">Забыли пароль?</a>
+                </div>
+            </form>
             
-            <button type="submit" class="auth-btn">
-                <span id="auth-text">Войти</span>
-                <div id="auth-loader" class="neon-loader hidden"></div>
-            </button>
-        </form>
-        
-        <div class="mt-6 text-center text-sm text-white/60">
-            <p id="auth-switch-mode">Нет аккаунта? <a href="#" class="text-blue-400 hover:underline" onclick="switchAuthMode('register')">Зарегистрируйтесь</a></p>
-            <p id="auth-forgot-password" class="mt-1">Забыли пароль? <a href="#" class="text-blue-400 hover:underline" onclick="switchAuthMode('forgot')">Восстановить</a></p>
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form">
+                <div class="auth-input-group">
+                    <label for="register-name">Имя</label>
+                    <input type="text" id="register-name" class="auth-input" placeholder="Ваше имя" required>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" class="auth-input" placeholder="Ваш email" required>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label for="register-password">Пароль</label>
+                    <input type="password" id="register-password" class="auth-input" placeholder="Придумайте пароль" required>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label for="register-confirm">Подтвердите пароль</label>
+                    <input type="password" id="register-confirm" class="auth-input" placeholder="Повторите пароль" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Зарегистрироваться</button>
+            </form>
+            
+            <!-- Forgot Password Form -->
+            <form id="forgot-form" class="auth-form">
+                <div class="auth-input-group">
+                    <label for="forgot-email">Email</label>
+                    <input type="email" id="forgot-email" class="auth-input" placeholder="Ваш email" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Восстановить пароль</button>
+                
+                <div class="auth-footer">
+                    <a href="#" onclick="switchAuthMode('login')">Вернуться к входу</a>
+                </div>
+            </form>
         </div>
     </div>
-</div>
-<!-- Toast notification -->
-<div id="toast" class="fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-10 opacity-0 transition-all duration-300"></div>
-<!-- Sidebar Menu -->
-<aside id="sidebar-menu" class="menu-panel">
-  <span id="close-menu" class="menu-close">&times;</span>
-  <h2 class="text-white">Меню</h2>
-  <ul>
-    <li><a href="#">Профиль</a></li>
-    <li><a href="#">Статистика</a></li>
-    <li><a href="#">Таблица лидеров</a></li>
-    <li><a href="#">Авторизация</a></li>
-  </ul>
-</aside>
+    
+    <!-- Toast notification -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-10 opacity-0 transition-all duration-300"></div>
+    
+    <!-- Sidebar Menu -->
+    <aside id="sidebar-menu" class="menu-panel">
+        <span id="close-menu" class="menu-close">&times;</span>
+        <h2 class="text-white">Меню</h2>
+        <ul>
+            <li><a href="#">Профиль</a></li>
+            <li><a href="#">Статистика</a></li>
+            <li><a href="#">Таблица лидеров</a></li>
+            <li><a href="#" onclick="openAuthModal()">Авторизация</a></li>
+        </ul>
+    </aside>
 
-<!-- Overlay when menu is open -->
-<div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+    <!-- Overlay when menu is open -->
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
 
     <!-- Header -->
     <header class="relative overflow-hidden py-12">
@@ -469,14 +690,14 @@
 
     <!-- Main content -->
     <div class="container mx-auto px-4 py-12 max-w-6xl">
-  <div class="neon-card neon-border rounded-2xl overflow-hidden mb-8">
-    <div class="p-6 md:p-8">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold glow-text">ФИНАНСОВЫЙ ТРЕНАЖЁР</h2>
-        <button onclick="toggleMenu()" class="btn-neon px-4 py-2 rounded-lg flex items-center">
-          Меню
-        </button>
-      </div>
+        <div class="neon-card neon-border rounded-2xl overflow-hidden mb-8">
+            <div class="p-6 md:p-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold glow-text">ФИНАНСОВЫЙ ТРЕНАЖЁР</h2>
+                    <button onclick="toggleMenu()" class="btn-neon px-4 py-2 rounded-lg flex items-center">
+                        Меню
+                    </button>
+                </div>
                 
                 <!-- Level tabs -->
                 <div class="flex gap-3 mb-6">
@@ -525,6 +746,12 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                         Теория
+                    </button>
+                    <button class="tab-btn tab-inactive px-5 py-3 rounded-full font-medium flex items-center" onclick="openTab(event, 'olympiad')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        Коллекция олимпиад
                     </button>
                 </div>
                 
@@ -847,6 +1074,52 @@
                     </div>
                 </div>
                 
+                <!-- Коллекция олимпиад -->
+                <div id="olympiad" class="tab-content hidden">
+                    <div class="bg-indigo-900/20 rounded-xl p-6 mb-6 neon-border">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-900/30 p-3 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-neon-indigo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-neon-indigo mb-3">ОЛИМПИАДНАЯ ЗАДАЧА</h3>
+                                <p id="olympiad-question" class="mb-4 text-white/80"></p>
+                                
+                                <div class="flex flex-col md:flex-row gap-4 items-start md:items-end">
+                                    <div class="w-full md:w-auto flex-1">
+                                        <label class="block text-sm font-medium text-neon-indigo mb-1">Ваш ответ:</label>
+                                        <input type="text" id="olympiad-answer" placeholder="Введите ответ" 
+                                            class="w-full px-4 py-3 rounded-lg input-neon focus:outline-none focus:ring-2 focus:ring-neon-indigo">
+                                        <div id="olympiad-alert" class="hidden text-sm mt-1 text-neon-pink"></div>
+                                    </div>
+                                    <button onclick="checkOlympiadAnswer()" 
+                                        class="btn-neon px-6 py-3 rounded-lg neon-pulse">
+                                        Проверить ответ
+                                    </button>
+                                </div>
+                                
+                                <div id="olympiad-result" class="result-container hidden neon-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <button onclick="generateOlympiadTask()" 
+                            class="btn-neon px-6 py-3 rounded-lg flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Новая задача
+                        </button>
+                        
+                        <div class="text-sm text-white/60 bg-black/30 px-4 py-2 rounded-full neon-border">
+                            <span class="font-medium text-neon-indigo" id="olympiad-score">0</span> из <span class="font-medium" id="olympiad-total">0</span> верно
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Прогресс -->
                 <div class="mt-12">
                     <div class="flex items-center justify-between mb-3">
@@ -884,6 +1157,7 @@
         let currentDiffTask = {};
         let currentInvestTask = {};
         let currentEgeTask = {};
+        let currentOlympiadTask = {};
         let score = 0;
         let totalTasks = 0;
         let answeredDeposit = false;
@@ -891,41 +1165,120 @@
         let answeredDiff = false;
         let answeredInvest = false;
         let answeredEge = false;
+        let answeredOlympiad = false;
         let currentLevel = 'basic'; // 'basic' или 'advanced'
         let egeTasksCompleted = 0;
         let egeTotalScore = 0;
 
-
         // Функции для авторизации
         function openAuthModal() {
-            document.getElementById('auth-modal').classList.remove('hidden');
+            document.getElementById('auth-overlay').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
         function closeAuthModal() {
-            document.getElementById('auth-modal').classList.add('hidden');
+            document.getElementById('auth-overlay').classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        function switchToRegister() {
-            // Здесь можно добавить логику переключения на регистрацию
-            alert('Функция регистрации будет реализована позже');
-        }
-
-        // Обработчик формы входа
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('auth-email').value;
-            const password = document.getElementById('auth-password').value;
+        function switchAuthMode(mode) {
+            // Скрыть все формы
+            document.querySelectorAll('.auth-form').forEach(form => {
+                form.classList.remove('active');
+            });
             
-            if (!email || !password) {
-                alert('Пожалуйста, заполните все поля');
-                return;
+            // Показать нужную форму
+            if (mode === 'login') {
+                document.getElementById('login-form').classList.add('active');
+            } else if (mode === 'register') {
+                document.getElementById('register-form').classList.add('active');
+            } else if (mode === 'forgot') {
+                document.getElementById('forgot-form').classList.add('active');
             }
             
-            // Здесь будет логика авторизации
-            alert('Функция входа будет реализована позже');
-            closeAuthModal();
+            // Обновить активную вкладку
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            if (mode === 'login') {
+                document.querySelector('.auth-tab[data-tab="login"]').classList.add('active');
+            } else if (mode === 'register') {
+                document.querySelector('.auth-tab[data-tab="register"]').classList.add('active');
+            } else if (mode === 'forgot') {
+                document.querySelector('.auth-tab[data-tab="forgot"]').classList.add('active');
+            }
+            
+            // Скрыть сообщение об ошибке
+            document.getElementById('auth-error').style.display = 'none';
+        }
+
+        // Инициализация авторизации
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработчики для вкладок авторизации
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    switchAuthMode(this.dataset.tab);
+                });
+            });
+            
+            // Обработчик формы входа
+            document.getElementById('login-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                
+                if (!email || !password) {
+                    document.getElementById('auth-error').textContent = 'Пожалуйста, заполните все поля';
+                    document.getElementById('auth-error').style.display = 'block';
+                    return;
+                }
+                
+                // Здесь будет логика авторизации
+                showToast('Вход выполнен успешно!');
+                closeAuthModal();
+            });
+            
+            // Обработчик формы регистрации
+            document.getElementById('register-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('register-name').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+                const confirm = document.getElementById('register-confirm').value;
+                
+                if (!name || !email || !password || !confirm) {
+                    document.getElementById('auth-error').textContent = 'Пожалуйста, заполните все поля';
+                    document.getElementById('auth-error').style.display = 'block';
+                    return;
+                }
+                
+                if (password !== confirm) {
+                    document.getElementById('auth-error').textContent = 'Пароли не совпадают';
+                    document.getElementById('auth-error').style.display = 'block';
+                    return;
+                }
+                
+                // Здесь будет логика регистрации
+                showToast('Регистрация прошла успешно!');
+                closeAuthModal();
+            });
+            
+            // Обработчик формы восстановления пароля
+            document.getElementById('forgot-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('forgot-email').value;
+                
+                if (!email) {
+                    document.getElementById('auth-error').textContent = 'Пожалуйста, введите email';
+                    document.getElementById('auth-error').style.display = 'block';
+                    return;
+                }
+                
+                // Здесь будет логика восстановления пароля
+                showToast('Инструкции отправлены на ваш email');
+                closeAuthModal();
+            });
         });
 
         // Создание анимированного фона
@@ -996,6 +1349,7 @@
             if (tabName === 'diff') generateDiffTask();
             if (tabName === 'invest') generateInvestTask();
             if (tabName === 'ege') generateEgeTask();
+            if (tabName === 'olympiad') generateOlympiadTask();
         }
 
         // Переключение уровня сложности
@@ -1042,7 +1396,7 @@
             let totalCorrect = 0;
             let totalTasks = 0;
             
-            ['deposit', 'annuity', 'diff', 'invest', 'ege'].forEach(type => {
+            ['deposit', 'annuity', 'diff', 'invest', 'ege', 'olympiad'].forEach(type => {
                 totalCorrect += parseInt(document.getElementById(`${type}-score`).textContent);
                 totalTasks += parseInt(document.getElementById(`${type}-total`).textContent);
             });
@@ -1050,6 +1404,17 @@
             const progress = totalTasks > 0 ? Math.round((totalCorrect / totalTasks) * 100) : 0;
             document.getElementById('progress-bar').style.width = `${progress}%`;
             document.getElementById('total-score').textContent = `${progress}%`;
+        }
+
+        // Показать toast-уведомление
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 3000);
         }
 
         // Инициализация
@@ -1250,73 +1615,72 @@
         }
 
         function checkEgeAnswer() {
-    const alertDiv = document.getElementById('ege-alert');
-    const answerInput = document.getElementById('ege-answer');
-    const resultDiv = document.getElementById('ege-result');
-    
-    if (answeredEge) {
-        resultDiv.innerHTML = `
-            <div class="flex items-start">
-                <div class="mr-2">⚠️</div>
-                <div>Вы уже ответили! Нажмите 'Новая задача'.</div>
-            </div>
-        `;
-        resultDiv.className = 'result-container bg-yellow-900/20 text-yellow-400 neon-border';
-        resultDiv.classList.remove('hidden');
-        return;
-    }
-    
-    const userInput = answerInput.value.trim();
-    
-    if (userInput === '') {
-        alertDiv.textContent = 'Пожалуйста, введите ответ';
-        alertDiv.classList.remove('hidden');
-        return;
-    }
-    
-    answeredEge = true;
-    totalTasks++;
-    egeTasksCompleted++;
-    
-    const isCorrect = userInput === currentEgeTask.correct;
-    const pointsEarned = currentLevel === 'basic' ? 1 : 2;
-    
-    if (isCorrect) {
-        egeTotalScore += pointsEarned;
-        resultDiv.innerHTML = `
-            <div class="flex items-start text-sm">
-                <div class="mr-2 mt-1">✅</div>
-                <div>
-                    <p class="font-bold text-green-400">Правильно! +${pointsEarned} балл${pointsEarned > 1 ? 'а' : ''}</p>
-                    <p class="mt-1">Ответ: <span class="font-mono">${currentEgeTask.correct}</span></p>
-                    <details class="mt-1 text-gray-300">
-                        <summary class="cursor-pointer hover:text-white">Показать решение</summary>
-                        <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentEgeTask.solution}</div>
-                    </details>
-                </div>
-            </div>
-        `;
-        resultDiv.className = 'result-container bg-green-900/10 neon-border';
-    } else {
-        resultDiv.innerHTML = `
-            <div class="flex items-start text-sm">
-                <div class="mr-2 mt-1">❌</div>
-                <div>
-                    <p class="font-bold text-red-400">Неправильно</p>
-                    <p class="mt-1">Правильный ответ: <span class="font-mono">${currentEgeTask.correct}</span></p>
-                    <details class="mt-1 text-gray-300" open>
-                        <summary class="cursor-pointer hover:text-white">Решение</summary>
-                        <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentEgeTask.solution}</div>
-                    </details>
-                </div>
-            </div>
-        `;
-        resultDiv.className = 'result-container bg-red-900/10 neon-border';
-    }
-    
-    resultDiv.classList.remove('hidden');
-    answerInput.disabled = true;
-
+            const alertDiv = document.getElementById('ege-alert');
+            const answerInput = document.getElementById('ege-answer');
+            const resultDiv = document.getElementById('ege-result');
+            
+            if (answeredEge) {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start">
+                        <div class="mr-2">⚠️</div>
+                        <div>Вы уже ответили! Нажмите 'Новая задача'.</div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-yellow-900/20 text-yellow-400 neon-border';
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+            
+            const userInput = answerInput.value.trim();
+            
+            if (userInput === '') {
+                alertDiv.textContent = 'Пожалуйста, введите ответ';
+                alertDiv.classList.remove('hidden');
+                return;
+            }
+            
+            answeredEge = true;
+            totalTasks++;
+            egeTasksCompleted++;
+            
+            const isCorrect = userInput === currentEgeTask.correct;
+            const pointsEarned = currentLevel === 'basic' ? 1 : 2;
+            
+            if (isCorrect) {
+                egeTotalScore += pointsEarned;
+                resultDiv.innerHTML = `
+                    <div class="flex items-start text-sm">
+                        <div class="mr-2 mt-1">✅</div>
+                        <div>
+                            <p class="font-bold text-green-400">Правильно! +${pointsEarned} балл${pointsEarned > 1 ? 'а' : ''}</p>
+                            <p class="mt-1">Ответ: <span class="font-mono">${currentEgeTask.correct}</span></p>
+                            <details class="mt-1 text-gray-300">
+                                <summary class="cursor-pointer hover:text-white">Показать решение</summary>
+                                <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentEgeTask.solution}</div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-green-900/10 neon-border';
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start text-sm">
+                        <div class="mr-2 mt-1">❌</div>
+                        <div>
+                            <p class="font-bold text-red-400">Неправильно</p>
+                            <p class="mt-1">Правильный ответ: <span class="font-mono">${currentEgeTask.correct}</span></p>
+                            <details class="mt-1 text-gray-300" open>
+                                <summary class="cursor-pointer hover:text-white">Решение</summary>
+                                <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentEgeTask.solution}</div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-red-900/10 neon-border';
+            }
+            
+            resultDiv.classList.remove('hidden');
+            answerInput.disabled = true;
             
             // Обновление счетчиков
             document.getElementById('ege-score').textContent = egeTotalScore;
@@ -1329,6 +1693,80 @@
                 document.getElementById('ege-answer').disabled = true;
                 document.getElementById('ege-new-task-btn').disabled = true;
             }
+            
+            updateProgress();
+        }
+        
+        function checkOlympiadAnswer() {
+            const alertDiv = document.getElementById('olympiad-alert');
+            const answerInput = document.getElementById('olympiad-answer');
+            const resultDiv = document.getElementById('olympiad-result');
+            
+            if (answeredOlympiad) {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start">
+                        <div class="mr-2">⚠️</div>
+                        <div>Вы уже ответили! Нажмите 'Новая задача'.</div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-yellow-900/20 text-yellow-400 neon-border';
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+            
+            const userInput = answerInput.value.trim();
+            
+            if (userInput === '') {
+                alertDiv.textContent = 'Пожалуйста, введите ответ';
+                alertDiv.classList.remove('hidden');
+                return;
+            }
+            
+            answeredOlympiad = true;
+            totalTasks++;
+            
+            const isCorrect = userInput === currentOlympiadTask.correct;
+            
+            if (isCorrect) {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start text-sm">
+                        <div class="mr-2 mt-1">✅</div>
+                        <div>
+                            <p class="font-bold text-green-400">Правильно!</p>
+                            <p class="mt-1">Ответ: <span class="font-mono">${currentOlympiadTask.correct}</span></p>
+                            <details class="mt-1 text-gray-300">
+                                <summary class="cursor-pointer hover:text-white">Показать решение</summary>
+                                <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentOlympiadTask.solution}</div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-green-900/10 neon-border';
+                score++;
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start text-sm">
+                        <div class="mr-2 mt-1">❌</div>
+                        <div>
+                            <p class="font-bold text-red-400">Неправильно</p>
+                            <p class="mt-1">Правильный ответ: <span class="font-mono">${currentOlympiadTask.correct}</span></p>
+                            <details class="mt-1 text-gray-300" open>
+                                <summary class="cursor-pointer hover:text-white">Решение</summary>
+                                <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentOlympiadTask.solution}</div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-red-900/10 neon-border';
+            }
+            
+            resultDiv.classList.remove('hidden');
+            answerInput.disabled = true;
+            
+            const scoreSpan = document.getElementById('olympiad-score');
+            scoreSpan.textContent = parseInt(scoreSpan.textContent) + (isCorrect ? 1 : 0);
+            const totalSpan = document.getElementById('olympiad-total');
+            totalSpan.textContent = parseInt(totalSpan.textContent) + 1;
             
             updateProgress();
         }
@@ -1682,7 +2120,7 @@
                 case 'deposit-additions':
                     // Вклад с ежегодными пополнениями
                     const additions = Math.round((100000 + Math.random() * 400000) / 10000) * 10000; // Пополнения от 100к до 500к
-                    const finalAmount = Math.round(amount * Math.pow(1 + rate/100, 5) + additions * (Math.pow(1 + rate/100, 4) + Math.pow(1 + rate/100, 3) + Math.pow(1 + rate/100, 2) + (1 + rate/100)));
+                    const finalAmount = Math.round(amount * Math.pow(1 + rate/100, 5) + additions * (Math.pow(1 + rate/100, 4) + Math.pow(1 + rate/100, 3) + Math.pow(1 + rate/100, 2) + (1 + rate/100));
                     
                     question = `В банк помещена сумма ${(amount/1000000).toLocaleString('ru-RU')} млн рублей под ${rate}% годовых. В конце каждого из первых четырех лет хранения после начисления процентов вкладчик дополнительно вносил на счет ${additions.toLocaleString('ru-RU')} рублей. Какая сумма будет на счету к концу пятого года?`;
                     correct = finalAmount.toString();
@@ -1703,6 +2141,114 @@
             document.getElementById('ege-alert').classList.add('hidden');
             answeredEge = false;
         }
+        
+        function generateOlympiadTask() {
+            const universities = [
+                "МГУ", "МИФИ", "ВШЭ", "МФТИ", "СПбГУ", "РЭУ им. Плеханова", "МГТУ им. Баумана"
+            ];
+            const university = universities[Math.floor(Math.random() * universities.length)];
+            
+            const years = [2023, 2024, 2025];
+            const year = years[Math.floor(Math.random() * years.length)];
+            
+            // Случайный выбор типа задачи
+            const taskType = Math.floor(Math.random() * 3);
+            
+            let question, correct, solution;
+            
+            if (taskType === 0) {
+                // Задача на комбинированные вклады
+                const principal = Math.floor(Math.random() * 5000000) + 1000000;
+                const rate1 = 8 + Math.floor(Math.random() * 8);
+                const rate2 = 10 + Math.floor(Math.random() * 10);
+                const years1 = Math.floor(Math.random() * 3) + 1;
+                const years2 = Math.floor(Math.random() * 3) + 1;
+                
+                const amountAfterFirstPeriod = principal * Math.pow(1 + rate1/100, years1);
+                const finalAmount = amountAfterFirstPeriod * Math.pow(1 + rate2/100, years2);
+                
+                question = `Вкладчик положил в банк ${formatNumber(principal)} рублей под ${rate1}% годовых с ежегодной капитализацией. Через ${years1} ${getYearWord(years1)} банк изменил условия вклада: теперь проценты начисляются под ${rate2}% годовых с ежеквартальной капитализацией. Какая сумма будет на счету через ${years1 + years2} ${getYearWord(years1 + years2)}?`;
+                correct = Math.round(finalAmount).toString();
+                solution = `1. После первых ${years1} лет: ${principal} × (1 + ${rate1}/100)^${years1} = ${Math.round(amountAfterFirstPeriod)} руб.\n2. Затем ${years2} лет под ${rate2}% с квартальной капитализацией: ${Math.round(amountAfterFirstPeriod)} × (1 + ${rate2}/4/100)^{${years2}×4} = ${Math.round(finalAmount)} руб.`;
+            } 
+            else if (taskType === 1) {
+                // Задача с кредитом и досрочным погашением
+                const principal = Math.floor(Math.random() * 3000000) + 1000000;
+                const rate = 12 + Math.floor(Math.random() * 10);
+                const term = 10 + Math.floor(Math.random() * 10);
+                const earlyMonth = 6 + Math.floor(Math.random() * 6);
+                const earlyPayment = Math.floor(Math.random() * 500000) + 200000;
+                
+                const monthlyRate = rate / 100 / 12;
+                const months = term * 12;
+                let remaining = principal;
+                let totalPaid = 0;
+                
+                // Расчет аннуитетного платежа
+                const annuity = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+                
+                // Расчет первых earlyMonth месяцев
+                for (let i = 1; i <= earlyMonth; i++) {
+                    const interest = remaining * monthlyRate;
+                    const principalPart = annuity - interest;
+                    remaining -= principalPart;
+                    totalPaid += annuity;
+                }
+                
+                // Досрочное погашение
+                remaining -= earlyPayment;
+                totalPaid += earlyPayment;
+                
+                // Пересчет платежа после досрочного погашения
+                const newMonths = months - earlyMonth;
+                const newAnnuity = remaining * monthlyRate * Math.pow(1 + monthlyRate, newMonths) / (Math.pow(1 + monthlyRate, newMonths) - 1);
+                
+                // Расчет оставшихся месяцев
+                for (let i = 1; i <= newMonths; i++) {
+                    const interest = remaining * monthlyRate;
+                    const principalPart = newAnnuity - interest;
+                    remaining -= principalPart;
+                    totalPaid += newAnnuity;
+                }
+                
+                question = `Клиент взял кредит ${formatNumber(principal)} руб. под ${rate}% годовых на ${term} лет с аннуитетными платежами. Через ${earlyMonth} месяцев он внес досрочный платеж ${formatNumber(earlyPayment)} руб. Какую общую сумму заплатит клиент банку за весь срок кредита?`;
+                correct = Math.round(totalPaid).toString();
+                solution = `1. Аннуитетный платеж: ${Math.round(annuity)} руб./мес.\n2. После ${earlyMonth} месяцев остаток: ${Math.round(remaining + earlyPayment)} руб.\n3. После досрочки: ${Math.round(remaining)} руб.\n4. Новый платеж: ${Math.round(newAnnuity)} руб./мес.\n5. Общая сумма: ${Math.round(totalPaid)} руб.`;
+            } 
+            else {
+                // Задача с инвестиционным портфелем
+                const initial = Math.floor(Math.random() * 2000000) + 500000;
+                const stockReturn = 15 + Math.floor(Math.random() * 20);
+                const bondReturn = 5 + Math.floor(Math.random() * 5);
+                const years = 3 + Math.floor(Math.random() * 4);
+                const stockPercent = 40 + Math.floor(Math.random() * 30);
+                const bondPercent = 100 - stockPercent;
+                
+                const stockAmount = initial * stockPercent / 100;
+                const bondAmount = initial * bondPercent / 100;
+                
+                const finalStock = stockAmount * Math.pow(1 + stockReturn/100, years);
+                const finalBond = bondAmount * Math.pow(1 + bondReturn/100, years);
+                const finalAmount = finalStock + finalBond;
+                
+                question = `Инвестор вложил ${formatNumber(initial)} руб. в портфель: ${stockPercent}% в акции (доходность ${stockReturn}% годовых) и ${bondPercent}% в облигации (доходность ${bondReturn}% годовых). Какова будет стоимость портфеля через ${years} ${getYearWord(years)}?`;
+                correct = Math.round(finalAmount).toString();
+                solution = `1. Акции: ${formatNumber(stockAmount)} × (1 + ${stockReturn}/100)^${years} = ${Math.round(finalStock)} руб.\n2. Облигации: ${formatNumber(bondAmount)} × (1 + ${bondReturn}/100)^${years} = ${Math.round(finalBond)} руб.\n3. Итого: ${Math.round(finalStock)} + ${Math.round(finalBond)} = ${Math.round(finalAmount)} руб.`;
+            }
+            
+            currentOlympiadTask = {
+                correct: correct,
+                question: `[${university}, ${year}] ${question}`,
+                solution: solution
+            };
+            
+            document.getElementById('olympiad-question').textContent = currentOlympiadTask.question;
+            document.getElementById('olympiad-answer').value = '';
+            document.getElementById('olympiad-result').classList.add('hidden');
+            document.getElementById('olympiad-answer').disabled = false;
+            document.getElementById('olympiad-alert').classList.add('hidden');
+            answeredOlympiad = false;
+        }
 
         // Вспомогательные функции
         function formatNumber(num) {
@@ -1719,35 +2265,35 @@
             return 'лет';
         }
     </script>
-<script>
-  function toggleMenu() {
-    const sidebar = document.getElementById('sidebar-menu');
-    const overlay = document.getElementById('menu-overlay');
-    sidebar.classList.toggle('open');
-    overlay.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
-  }
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar-menu');
+            const overlay = document.getElementById('menu-overlay');
+            sidebar.classList.toggle('open');
+            overlay.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
+        }
 
-  function closeMenu() {
-    document.getElementById('sidebar-menu').classList.remove('open');
-    document.getElementById('menu-overlay').style.display = 'none';
-  }
+        function closeMenu() {
+            document.getElementById('sidebar-menu').classList.remove('open');
+            document.getElementById('menu-overlay').style.display = 'none';
+        }
 
-  // Close menu on outside click or ESC key
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeMenu();
-    }
-  });
+        // Close menu on outside click or ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
 
-  document.getElementById('close-menu').addEventListener('click', () => {
-    closeMenu();
-  });
+        document.getElementById('close-menu').addEventListener('click', () => {
+            closeMenu();
+        });
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      closeMenu();
-    }
-  });
-</script>
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
 </html>
